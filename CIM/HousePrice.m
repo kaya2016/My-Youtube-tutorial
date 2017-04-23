@@ -30,12 +30,12 @@ hold on
 % The first place
 xp = 4.0;		    % Choose point at which the derivative will be computed
 fp =subs(f,xp);		% function value at xp
-m = subs(d1f,xp)    % find the slope at xp
+m = subs(d1f,xp);    % find the slope at xp
 % plot the tagent y-y1 = m(x-x1)
 x1 = xp-0.7;
 x2 = xp+0.7;
-f1 =  fp-m*(xp-x1) 
-f2 =  m*(x2-xp) +fp
+f1 =  fp-m*(xp-x1);
+f2 =  m*(x2-xp) +fp;
 line([x1 x2],[f1,f2],'Color','k', ...
    'LineStyle','--','LineWidth',2)
 text(x2,f2,'tangent')
@@ -74,7 +74,7 @@ x2 =6;
 syms x 
 fun = @(x)0.0076*x^4 - 0.2165* x^3 + 1.8017*x^2-3.5454*x + 18.081;
 xs = fminbnd(@(x)-fun(x),x1,x2);
-fprintf('The solution (x*): %4.2f is a maximum \n',xs);
+fprintf('In The Intervall [1,6] (x*): %4.2f is a maximum \n',xs);
 %% plot the function and the derivatives 
 subplot(3,1,1)
 h1 = ezplot(f,[1 6]); % plot f between 0 and 12
